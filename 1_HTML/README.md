@@ -304,7 +304,7 @@
 3. 대부분의 양식은 `<input>` 태그의 "type" 속성으로 정의
 4. `<select>, <option>`: 콤보 상자 작성
 5. `<textarea>`: 텍스트를 여러 줄 입력하는 상자 작성
-6. `<button`: 버튼 형식의 요소 작성(input 대신 button 사용)
+6. `<button>`: 버튼 형식의 요소 작성(input 대신 button 사용)
 
 - form 태그 속성
   - name: form 태그의 이름을 지정한다.
