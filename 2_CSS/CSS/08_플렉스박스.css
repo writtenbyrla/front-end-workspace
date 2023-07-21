@@ -45,6 +45,7 @@
     background-color: white;
 
     /* 7. flex-grow */
+    /* 페이지에 남은 여백을 없애기 위해서 값을 1로 두면 여백이 사라짐 * /
     flex-grow: 1;
 
     /* 8. flex-basis */
