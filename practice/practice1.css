@@ -1,0 +1,39 @@
+label{
+    font-weight: bold;
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+div{
+    margin: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#submit input{
+    margin-left: 130px;
+    margin-top: 10px;
+}
+
+#title input{
+    width: 225px;
+}
+
+hr{
+    margin-top:20px;
+    margin-bottom: 20px;
+    border: 0.5px solid;
+    color: lightgray;
+}
+
+thead, tfoot{
+    background-color: lightsalmon;
+}
