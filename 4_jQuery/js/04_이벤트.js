@@ -90,3 +90,37 @@ $('#textarea2').on('keyup', function(e) {
         $('#counter').text(currentLength);
     }
 });
+
+$('#userId').on('keyup', function(e){
+    console.log($(e.target).val());
+    const regExp = /^[a-z][a-z0-9]{4,12}$/;
+    const id = $(e.target).val();
+
+    if(regExp.test(id)){
+        $('#idCheck').text('사용 가능한 아이디입니다.').css('color', 'blue');
+    } else if(id === ""){
+        $('#idCheck').text('');
+    } else {
+        $('#idCheck').text('사용 불가능한 아이디입니다.').css('color', 'red');
+    } 
+});
+
+// 3. trigger() 메소드
+// let num = 0;
+$('#area3').on('click', function() {
+    let currentCount = parseInt($('#counter2').text());
+    $('#counter2').text(++currentCount);
+});
+
+// area3에 건 click 이벤트를 쓰겠다(trigger)
+$('#btn').on('click', function(){
+    $('#area3').trigger('click');
+});
+
+// 내가 한 방식
+// let count = 0;
+// $('#area3').on('click', function(e){
+//     $('#counter2').text(count+1);
+//     count += 1;
+// });
+
