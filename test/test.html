@@ -3,61 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>practice1</title>
-    <link rel="stylesheet" href="practice1.css" />
-
+    <title>공지사항 작성하기</title>
     <style>
-      label {
-        font-weight: bold;
-        display: inline-block;
-        width: 70px;
-        text-align: center;
-        align-items: center;
+      fieldset {
+        border: 2px solid gray;
       }
-      form {
+      label {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        font-weight: bold;
       }
       div {
-        margin: 5px;
         display: flex;
-        justify-content: left;
-        align-items: center;
+        margin: 5px;
       }
-      #submit input {
-        margin-left: 130px;
-        margin-top: 10px;
+      #title input,
+      textarea {
+        width: 300px;
       }
-      #title input {
-        width: 225px;
+      #submit {
+        margin-top: 20px;
+        margin-left: 150px;
       }
+
       hr {
         margin-top: 20px;
         margin-bottom: 20px;
-        border: 0.5px solid;
-        color: lightgray;
+      }
+
+      table {
+        width: 100%;
       }
       thead,
       tfoot {
         background-color: lightsalmon;
-        text-align: center;
         color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+      thead {
+        height: 35px;
       }
       tbody {
         background-color: beige;
       }
-      table {
-        width: 100%;
+      #button {
+        width: 68px;
       }
     </style>
   </head>
   <body>
-    <form action="insert_no" method="post">
+    <form action="insert.no" method="post">
       <fieldset>
         <legend>공지사항 작성하기</legend>
 
         <div id="title">
-          <label>제목</label>
+          <label for="title">제목</label>
           <input
             type="text"
             name="title"
@@ -67,7 +70,7 @@
         </div>
 
         <div id="content">
-          <label>내용</label>
+          <label for="content">내용</label>
           <textarea
             name="content"
             cols="30"
@@ -77,8 +80,8 @@
           ></textarea>
         </div>
 
-        <div>
-          <label>첨부파일</label>
+        <div id="uploadFile">
+          <label for="uploadFile">첨부파일</label>
           <input type="file" name="uploadFile" />
         </div>
 
@@ -91,7 +94,7 @@
     <hr />
 
     <table border="1">
-      <thead height="50">
+      <thead>
         <tr>
           <td>번호</td>
           <td colspan="2">제목</td>
@@ -103,46 +106,45 @@
       <tbody>
         <tr>
           <td>9</td>
-          <td>공지사항 제목9</td>
-          <td width="20"><input type="button" value="바로가기" /></td>
+          <td>공지사항 제목 9</td>
+          <td id="button"><button>바로가기</button></td>
           <td>user01</td>
           <td>2021-03-29</td>
           <td>34</td>
         </tr>
         <tr>
           <td>6</td>
-          <td>공지사항 제목6</td>
-          <td><input type="button" value="바로가기" /></td>
+          <td>공지사항 제목 6</td>
+          <td><button>바로가기</button></td>
           <td>answ445</td>
           <td>2021-03-12</td>
           <td>67</td>
         </tr>
         <tr>
           <td>3</td>
-          <td>공지사항 제목3</td>
-          <td><input type="button" value="바로가기" /></td>
+          <td>공지사항 제목 3</td>
+          <td><button>바로가기</button></td>
           <td>testg12</td>
           <td>2021-03-01</td>
           <td>98</td>
         </tr>
         <tr>
           <td>2</td>
-          <td>공지사항 제목2</td>
-          <td><input type="button" value="바로가기" /></td>
-          <td>pahwe3</td>
+          <td>공지사항 제목 2</td>
+          <td><button>바로가기</button></td>
+          <td>palwe3</td>
           <td>2021-01-02</td>
           <td>85</td>
         </tr>
         <tr>
           <td>1</td>
-          <td>공지사항 제목1</td>
-          <td><input type="button" value="바로가기" /></td>
+          <td>공지사항 제목 1</td>
+          <td><button>바로가기</button></td>
           <td>xml23</td>
           <td>2020-12-24</td>
           <td>124</td>
         </tr>
       </tbody>
-
       <tfoot>
         <tr>
           <td colspan="4">전체공지사항 갯수</td>
@@ -152,8 +154,3 @@
     </table>
   </body>
 </html>
-
-const regExp = /^[\w\.]+@[a-z]+\.[a-z]+$/; const regExp = /^[가-힣]{2,}$/; const
-regExp = /^[!-~]{8,15}$/; const regExp2 = /[!-/:-@[-`{-~]/; const regExp =
-/^[a-zA-Z][a-zA-Z0-9]{3,11}$/; function userIdCheck() { const regExp =
-/^[a-zA-Z][a-zA-Z0-9]{3,11}$/; return regExp.test(userId.value); }
