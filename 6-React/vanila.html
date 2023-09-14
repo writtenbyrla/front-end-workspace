@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Total clicks : <span>0</span></h1>
+    <button onclick="setCount()">click!</button>
+
+    <script>
+      // onclick 지정했으니까 필요없음
+      //const button = document.querySelector("button");
+      const span = document.querySelector("span");
+      //let counter = 0;
+
+      // 화살표 함수
+      const setCount = () => {
+        //counter = counter + 1;
+        //span.innerHTML = counter;
+
+        // counter 지정 없이 바로 가능
+        span.innerHTML = parseInt(span.innerHTML) + 1;
+      };
+
+      // addEventListener 대신 onclick으로 함수 호출
+      //button.addEventListener("click", setCount);
+    </script>
+  </body>
+</html>
