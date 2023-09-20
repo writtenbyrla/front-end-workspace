@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // button 자체를 컴포넌트로 만듦
-// text, click에 대한 타입 설정 하려면 npm install prop-types 해야함(라이브러리 설치)
-// => package.json에서 prop-types 생긴거 확인 가능, import 해주기
 const Button = ({ text, click }) => {
   return <button onClick={click}>{text}</button>;
 };
 
+// props
+// text, click에 대한 타입 설정 하려면 npm install prop-types 해야함(라이브러리 설치)
+// => package.json에서 prop-types 생긴거 확인 가능, import 해주기
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
