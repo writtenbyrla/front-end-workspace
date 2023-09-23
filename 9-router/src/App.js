@@ -11,10 +11,12 @@ import "./App.css"; // css 파일 연결
 
 const Home = ({ list, deleteBeverage }) => {
   console.log(list);
+
   const onClick = (event) => {
     console.log(event.target.id); // 삭제버튼 클릭 시 id값 출력
     deleteBeverage(event.target.id);
   };
+
   return (
     <>
       {/* borderCollapse: "collapse" 테이블 border 1줄 처리 */}
@@ -116,6 +118,7 @@ const App = () => {
     const newBeverage = { id, title, desc };
 
     console.log(newBeverage);
+    // 현재 beverages에 newBeberage를 추가
     setBeverages([...beverages, newBeverage]);
     setId(id + 1);
   };
@@ -127,10 +130,12 @@ const App = () => {
   };
 
   return (
+    // 브라우저의 주소 표시줄과 상호 작용하여 다양한 경로로 이동할 수 있게 해줌
     <BrowserRouter>
       <h1>Cafe</h1>
       <ul>
         <li>
+          {/* Link:  홈 페이지(/)로 이동하도록 설정, localhost:3000/create */}
           <Link to="/">목록</Link>
         </li>
         <li>
@@ -141,6 +146,7 @@ const App = () => {
         <Route
           path="/"
           element={<Home list={beverages} deleteBeverage={deleteBeverage} />}
+          // Home 컴포넌트에 beverages와  deleteBeverage props 전달
         ></Route>
         {/* Create addBeverage={addBeverage} : 함수를 props로 던짐 */}
         <Route path="/create" element={<Create addBeverage={addBeverage} />} />
